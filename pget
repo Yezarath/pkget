@@ -1,10 +1,11 @@
 #!/usr/bin/env bash
 
 # bin/compile <build-dir> <cache-dir>
-# copyleft 2020 GNU GPLv3 
+# copyleft 2020 GNU GPLv3
 # buy enp0s10 with <3 https://github.com/z3r0n3t
-echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >>  $HOME/.profile #don't just be shure 
-echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.bashrc #be extra shure 
+echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >>  $HOME/.profile #don't just be shure
+echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.bashrc #be extra shure
+echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.zshrc #be extra shure
 echo "starting install..."
 echo curent user is "$USER"
 echo "---------------------"
@@ -73,29 +74,4 @@ done
 
 topic "Rewrite package-config files"
 find $BUILD_DIR/.apt -type f -ipath '*/pkgconfig/*.pc' | xargs --no-run-if-empty -n 1 sed -i -e 's!^prefix=\(.*\)$!prefix='$BUILD_DIR'/.apt\1!g'
-# start logging
-clear
-echo "building logfile"
-echo "-------START NEW INSTALL-----" >> pget.log
-echo "install date:" >> pget.log
-date >> pget.log
-echo "system:"
-uname -a >> pget.log
-echo "user:"
-echo "$USER" >> pget.log
-echo "user home:"
-echo "$HOME" >> pget.log
-echo "install details" >> pget.log
-echo "package:" >> pget.log
-echo "$PACKAGE" >> pget.log
-echo "build dir:"  >> pget.log
-echo "$BUILD_DIR"  >> pget.log
-echo "cahche_dir:" >> pget.log
-echo "$APT_CACHE_DIR" >> pget.log
-echo "source list dir:" >> pget.log
-echo "$APT_SOURCELIST_DIR" >> pget.log
-echo "-------END NEW INSTALL------" >> pget.log
-clear
-echo "install details saved to logfile"
-echo "TIP: to see the log file type cat pget.log"
 echo " All done :-)"
