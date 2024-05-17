@@ -3,15 +3,15 @@
 # bin/compile <build-dir> <cache-dir>
 # copyleft 2020 GNU GPLv3
 # buy enp0s10 with <3 https://github.com/z3r0n3t
-echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.profile
-echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME:.apt/usr/lib/x86_64-linux-gnu >> $HOME/.profile
-echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.bashrc
-echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME:.apt/usr/lib/x86_64-linux-gnu >> $HOME/.bashrc
+# echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.profile
+# echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.apt/usr/lib/x86_64-linux-gnu >> $HOME/.profile
+# echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.bashrc
+# echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.apt/usr/lib/x86_64-linux-gnu >> $HOME/.bashrc
 if [ -d "${HOME}/.oh-my-zsh/custom" ]; then
 	if [ ! -f "${HOME}/.oh-my-zsh/custom/pkget.zsh" ]; then
 		touch $HOME/.oh-my-zsh/custom/pkget.zsh
 		echo export PATH=$PATH:$HOME:.apt/usr/bin:.apt/bin:.apt/sbin:.apt/usr/share:.apt/usr/lib >> $HOME/.oh-my-zsh/custom/pkget.zsh
-		echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME:.apt/usr/lib/x86_64-linux-gnu >> $HOME/.oh-my-zsh/custom/pkget.zsh
+		echo export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:$HOME/.apt/usr/lib/x86_64-linux-gnu >> $HOME/.oh-my-zsh/custom/pkget.zsh
 	fi
 fi
 echo "starting install..."
